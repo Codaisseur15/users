@@ -59,7 +59,6 @@ export default class UserController {
   ) {
     const user = await User.findOneById(id)
     if (!user) throw new NotFoundError('Cannot find page')
-    if (!user) throw new NotFoundError('Cannot find user')
     return User.merge(user, update).save()
   }
 
